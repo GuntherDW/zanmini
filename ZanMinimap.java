@@ -9,8 +9,6 @@ import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import javax.management.RuntimeErrorException;
-
 import net.lahwran.zanminimap.BlockColor;
 import net.lahwran.zanminimap.TintType;
 import net.lahwran.zanminimap.Waypoint;
@@ -224,22 +222,26 @@ public class ZanMinimap implements Runnable {
 
     private int xCoord()
     {
-        return (int)(this.game.h.aL < 0.0D ? this.game.h.aL - 1 : this.game.h.aL);
+        // return (int)(this.game.h.aL < 0.0D ? this.game.h.aL - 1 : this.game.h.aL);
+        return (int)(this.game.h.aM < 0.0D ? this.game.h.aM - 1 : this.game.h.aM);
     }
 
     private int yCoord()
     {
-        return (int)(this.game.h.aN < 0.0D ? this.game.h.aN - 1 : this.game.h.aN);
+        // return (int)(this.game.h.aN < 0.0D ? this.game.h.aN - 1 : this.game.h.aN);
+        return (int)(this.game.h.aL < 0.0D ? this.game.h.aL - 1 : this.game.h.aL);
     }
 
     private int zCoord()
     {
-        return (int)this.game.h.aM;
+        // return (int)this.game.h.aM;
+        return (int)this.game.h.aN;
     }
 
     private float radius()
     {
-        return this.game.h.aR;
+        // return (float) this.game.h.aR;
+        return this.game.h.aS;
     }
 
     private String dCoord(int paramInt1)
@@ -576,7 +578,7 @@ public class ZanMinimap implements Runnable {
     public String zmodver = "v0.9.8";
 
     /** Minecraft version that we'll work with */
-    public static final String mcvers = "1.5_01";
+    public static final String mcvers = "1.6.6";
 
     /** Menu input string */
     public String inStr = "";
